@@ -165,7 +165,7 @@ const GenerateContent = ({recordedTextArr, setRecordedTextArr}) => {
               </div>
               : ""
             }
-            <img src={showMicAnimation ? micIcon : micBlackIcon} className={`relative z-10 h-[70px] p-[15px] rounded-[40px] border border-stone-300 hover:border-stone-600 cursor-pointer ${showMicAnimation ? "bg-red-500" : ""}`} onClick={toggleRecording} />
+            <img src={showMicAnimation ? micIcon : micBlackIcon} alt='mic icon' className={`relative z-10 h-[70px] p-[15px] rounded-[40px] border border-stone-300 hover:border-stone-600 cursor-pointer ${showMicAnimation ? "bg-red-500" : ""}`} onClick={toggleRecording} />
         </div>
       
         <div ref={textContainerRef} className='flex-[0_0_70%] w-full bg-gray-100 p-[15px] border border-stone-400 rounded-md overflow-auto'>

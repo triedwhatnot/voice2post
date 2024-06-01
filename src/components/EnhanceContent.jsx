@@ -55,8 +55,8 @@ const EnhanceContent = ({recordedTextArr}) => {
 
                 <div className='hidden md:block'>OR</div>
                 <div className='flex mb-[5px] md:mb-0'>
-                    <img src={linkedinLogo} onClick={linkedinGeneratorHandler} className='h-[35px] pt-[5px] mr-[5px] lg:mr-[15px] cursor-pointer' />
-                    <img src={twitterLogo} onClick={twitterGeneratorHandler} className='h-[42px] p-[1px] cursor-pointer' />
+                    <img src={linkedinLogo} alt='linkedin icon' onClick={linkedinGeneratorHandler} className='h-[35px] pt-[5px] mr-[5px] lg:mr-[15px] cursor-pointer' />
+                    <img src={twitterLogo} alt='twitter icon' onClick={twitterGeneratorHandler} className='h-[42px] p-[1px] cursor-pointer' />
                 </div>
             </div>
             
