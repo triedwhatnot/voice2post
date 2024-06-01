@@ -1,10 +1,12 @@
 import React, { useEffect, useRef, useState } from 'react'
 import micIcon from '../assets/mic.svg';
+import micBlackIcon from '../assets/mic-black.svg';
 import { capitalizeFirstLetter } from "../utility"
 
-const GenerateContent = () => {
+const GenerateContent = ({recordedTextArr, setRecordedTextArr}) => {
+  
   const [recognitionObj, setRecognitionObj] = useState(null);
-  const [recordedTextArr, setRecordedTextArr] = useState([]);
+  const [blockMicClick, setBlockMicClick] = useState(false);
   const [showMicAnimation, setShowMicAnimation] = useState(false);
   const [isRecording, setIsRecording] = useState(false);
   const [isEditing, setIsEditing] = useState(false);
@@ -71,6 +73,13 @@ const GenerateContent = () => {
   }, []);
 
   const toggleRecording = () => {
+    if(blockMicClick) return;
+
+    setBlockMicClick(true);
+    setTimeout(()=>{
+      setBlockMicClick(false);
+    },2000);
+
     if(isEditing){
       saveEditedText();
       setIsEditing(val => !val);
@@ -147,7 +156,7 @@ const GenerateContent = () => {
   }
 
   return (
-    <div className='flex flex-col h-[80vh] md:h-[unset] w-full md:w-2/4 items-center border border-sky-200 mr-[5px] p-[10px]'>
+    <div className='flex flex-col h-[80vh] md:h-[unset] w-full md:w-2/4 items-center border border-stone-300 md:mr-[20px] p-[10px] rounded-md'>
         <div className='flex-[0_0_20%] flex items-center relative'>
             {
               showMicAnimation ? 
@@ -156,10 +165,10 @@ const GenerateContent = () => {
               </div>
               : ""
             }
-            <img src={micIcon} className={`relative z-10 h-[75px] p-[15px] rounded-[40px] border border-sky-200 ${showMicAnimation ? "bg-sky-200" : ""}`} onClick={toggleRecording} />
+            <img src={showMicAnimation ? micIcon : micBlackIcon} className={`relative z-10 h-[70px] p-[15px] rounded-[40px] border border-stone-300 hover:border-stone-600 cursor-pointer ${showMicAnimation ? "bg-red-500" : ""}`} onClick={toggleRecording} />
         </div>
       
-        <div ref={textContainerRef} className='flex-[0_0_70%] w-full bg-gray-100 p-[15px] border border-sky-400 rounded-md overflow-auto'>
+        <div ref={textContainerRef} className='flex-[0_0_70%] w-full bg-gray-100 p-[15px] border border-stone-400 rounded-md overflow-auto'>
           {
             !isEditing ? 
             
@@ -177,7 +186,7 @@ const GenerateContent = () => {
         </div>
 
         <div className='flex-[0_0_10%] w-full flex justify-end items-end'>
-            <button className='p-[20px] border-sky-400 border rounded-[14px] w-[100px] h-[42px] flex items-center justify-center' onClick={handleEditSave}>{isEditing ? "Save" : "Edit"}</button>
+            <button className='p-[20px] border-stone-400 border rounded-[14px] w-[100px] h-[42px] flex items-center justify-center hover:border-stone-600' onClick={handleEditSave}>{isEditing ? "Save" : "Edit"}</button>
         </div>
         
     </div>
