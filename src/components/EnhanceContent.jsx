@@ -17,13 +17,6 @@ const EnhanceContent = () => {
                 </div>
             </div>
             
-            
-            {/* <div className='flex w-full justify-center'> */}
-                
-                
-                {/* <button className='p-[20px] border-sky-400 border rounded-[14px] w-[100px] h-[42px] flex items-center justify-center '>LinkedIn</button>
-                <button className='p-[20px] border-sky-400 border rounded-[14px] w-[100px] h-[42px] flex items-center justify-center '>Twitter</button> */}
-            {/* </div> */}
         </div>
         
 
