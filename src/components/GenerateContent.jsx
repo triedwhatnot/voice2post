@@ -1,4 +1,4 @@
-import React, { useEffect, useRef, useState } from 'react'
+import { useEffect, useRef, useState } from 'react'
 import micIcon from '../assets/mic.svg';
 import micBlackIcon from '../assets/mic-black.svg';
 import { capitalizeFirstLetter } from "../utility"
@@ -28,20 +28,11 @@ const GenerateContent = ({recordedTextArr, setRecordedTextArr}) => {
 
     setRecognitionObj(recognition);
 
-    // document.querySelector('button').addEventListener('click', () => {
-    //   recognition.start();
-    // });
-
-    // recognition.addEventListener('speechstart', handleSpeechStart);
     recognition.addEventListener('result', handleSpeechResult);
     recognition.addEventListener('speechend', handleSpeechEnd);
     recognition.addEventListener('error', handleSpeechError);
 
-    // function handleSpeechStart(){
-    //   console.log('Speech has been detected.');
-    // }
     function handleSpeechEnd(){
-      // console.log('Speech has been ended.');
       recognition.stop();
       setTimeout(()=>{
         recognition.start();
@@ -49,8 +40,6 @@ const GenerateContent = ({recordedTextArr, setRecordedTextArr}) => {
     }
 
     function handleSpeechResult(e){
-      // console.log('Result has been detected.');
-
       let last = e.results.length - 1;
       let text = e.results[last][0].transcript;
 
@@ -65,7 +54,6 @@ const GenerateContent = ({recordedTextArr, setRecordedTextArr}) => {
     }
 
     return ()=>{
-      // recognition.removeEventListener('speechstart', handleSpeechStart);
       recognition.removeEventListener('result', handleSpeechResult);
       recognition.removeEventListener('speechend', handleSpeechEnd);
       recognition.removeEventListener('error', handleSpeechError);

@@ -1,5 +1,3 @@
-import React from 'react';
-
 function ThreeDotLoader() {
   return (
     <div className="dot-loader">

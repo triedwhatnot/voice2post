@@ -1,4 +1,4 @@
-import React, { useState } from 'react';
+import { useState } from 'react';
 import linkedinLogo from "../assets/linkedin.svg";
 import twitterLogo from "../assets/twitter.svg";
 import { generateEnhancedText, GPT_OPTIONS } from '../gpt';
