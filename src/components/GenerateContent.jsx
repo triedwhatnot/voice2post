@@ -169,7 +169,7 @@ const GenerateContent = ({recordedTextArr, setRecordedTextArr}) => {
              : "")
 
             :
-            <textarea autoFocus={true} ref={textareaRef} className='resize-none outline-none h-full w-full bg-gray-100' value={textareaVal} onChange={handleTextareaChange}/>
+            <textarea autoFocus={true} ref={textareaRef} className='resize-none outline-none h-full w-full bg-transparent' value={textareaVal} onChange={handleTextareaChange}/>
           }
         </div>
 
