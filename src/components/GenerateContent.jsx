@@ -144,7 +144,7 @@ const GenerateContent = ({recordedTextArr, setRecordedTextArr}) => {
   }
 
   return (
-    <div className='flex flex-col h-[80vh] md:h-[unset] w-full md:w-2/4 items-center border border-stone-300 md:mr-[20px] p-[10px] rounded-md'>
+    <div className='flex flex-col h-[80vh] md:h-[unset] w-full md:w-2/4 items-center border border-stone-300 md:mr-[20px] px-[15px] md:px-[30px] py-[10px] rounded-md overflow-auto bg-white shadow-md'>
         <div className='flex-[0_0_20%] flex items-center relative'>
             {
               showMicAnimation ? 
@@ -156,7 +156,7 @@ const GenerateContent = ({recordedTextArr, setRecordedTextArr}) => {
             <img src={showMicAnimation ? micIcon : micBlackIcon} alt='mic icon' className={`relative z-10 h-[70px] p-[15px] rounded-[40px] border border-stone-300 hover:border-stone-600 cursor-pointer ${showMicAnimation ? "bg-red-500" : ""}`} onClick={toggleRecording} />
         </div>
       
-        <div ref={textContainerRef} className='flex-[0_0_70%] w-full bg-gray-100 p-[15px] border border-stone-400 rounded-md overflow-auto'>
+        <div ref={textContainerRef} className='flex-[0_0_68%] w-full bg-[#eee] p-[15px] border border-stone-400 rounded-md overflow-auto shadow-sm'>
           {
             !isEditing ? 
             
@@ -173,8 +173,8 @@ const GenerateContent = ({recordedTextArr, setRecordedTextArr}) => {
           }
         </div>
 
-        <div className='flex-[0_0_10%] w-full flex justify-end items-end'>
-            <button className='p-[20px] border-stone-400 border rounded-[14px] w-[100px] h-[42px] flex items-center justify-center hover:border-stone-600' onClick={handleEditSave}>{isEditing ? "Save" : "Edit"}</button>
+        <div className='flex-[0_0_12%] w-full flex justify-end items-center mt-[5px]'>
+            <button className='p-[20px] border-stone-400 border rounded-[14px] w-[100px] h-[42px] flex items-center justify-center hover:border-stone-600 shadow-md' onClick={handleEditSave}>{isEditing ? "Save" : "Edit"}</button>
         </div>
         
     </div>

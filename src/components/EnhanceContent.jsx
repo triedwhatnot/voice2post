@@ -47,13 +47,13 @@ const EnhanceContent = ({recordedTextArr}) => {
 	}
 
   return (
-    <div className='flex flex-col h-[95vh] md:h-[unset] w-full md:w-2/4 items-center border border-stone-300 md:ml-[20px] p-[10px] mt-[50px] md:mt-0 rounded-md'>
+    <div className='flex flex-col h-[95vh] md:h-[unset] w-full md:w-2/4 items-center border border-stone-300 md:ml-[20px] px-[15px] md:px-[30px] py-[10px] mt-[50px] md:mt-0 rounded-md overflow-auto bg-white shadow-md'>
         <div className='flex-[0_0_20%] flex flex-col items-center w-full justify-center'>
             <div className='flex flex-col md:flex-row w-full justify-around items-center'>
-                <input value={promptVal} onChange={(e)=> setPromptVal(e.target.value)} type='text' placeholder='Write your custom prompt here...' className='outline-none border border-stone-300 w-full md:w-[10em] lg:w-[12em] xl:w-[20em] h-[42px] rounded-md p-[10px]' />
-                <button onClick={customGeneratorHandler} className='p-[20px] border-stone-400 hover:border-stone-600 border rounded-[14px] w-[100px] h-[42px] flex items-center justify-center mt-[10px] mb-[10px] md:mt-0 md:mb-0'>Generate</button>
+                <input value={promptVal} onChange={(e)=> setPromptVal(e.target.value)} type='text' placeholder='Write your custom prompt here...' className='outline-none border border-stone-300 w-full md:w-[10em] lg:w-[12em] xl:w-[20em] h-[42px] rounded-md p-[10px] shadow-sm' />
+                <button onClick={customGeneratorHandler} className='p-[20px] border-stone-400 hover:border-stone-600 border rounded-[14px] w-[100px] h-[42px] flex items-center justify-center mt-[10px] mb-[10px] md:mt-0 md:mb-0 shadow-md'>Generate</button>
 
-                <div className='hidden md:block'>OR</div>
+                <div className='hidden md:block font-medium'>OR</div>
                 <div className='flex mb-[5px] md:mb-0'>
                     <img src={linkedinLogo} alt='linkedin icon' onClick={linkedinGeneratorHandler} className='h-[35px] pt-[5px] mr-[5px] lg:mr-[15px] cursor-pointer' />
                     <img src={twitterLogo} alt='twitter icon' onClick={twitterGeneratorHandler} className='h-[42px] p-[1px] cursor-pointer' />
@@ -63,12 +63,12 @@ const EnhanceContent = ({recordedTextArr}) => {
         </div>
         
 
-        <div className={`flex-[0_0_70%] w-full border p-[15px] whitespace-pre-line bg-gray-100 border-stone-400 rounded-md overflow-auto ${isLoading ? "flex justify-center items-center" : ""}`}>
+        <div className={`flex-[0_0_68%] w-full border p-[15px] whitespace-pre-line bg-[#eee] border-stone-400 rounded-md overflow-auto shadow-sm ${isLoading ? "flex justify-center items-center" : ""}`}>
 					{isLoading ? <ThreeDotLoader /> : <>{divContent}</>}
         </div>
 
-        <div className='flex-[0_0_10%] w-full flex justify-end items-end'>
-            <button onClick={copyCtaHandler} className='p-[20px] border-stone-400 hover:border-stone-600 border rounded-[14px] w-[100px] h-[42px] flex items-center justify-center'>{bottomCtaCopy}</button>
+        <div className='flex-[0_0_12%] w-full flex justify-end items-center mt-[5px]'>
+            <button onClick={copyCtaHandler} className='p-[20px] border-stone-400 hover:border-stone-600 border rounded-[14px] w-[100px] h-[42px] flex items-center justify-center shadow-md'>{bottomCtaCopy}</button>
         </div>
     </div>
   )
