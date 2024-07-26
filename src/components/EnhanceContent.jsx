@@ -1,7 +1,7 @@
 import { useState } from 'react';
 import linkedinLogo from "../assets/linkedin.svg";
 import twitterLogo from "../assets/twitter.svg";
-import { generateEnhancedText, GPT_OPTIONS } from '../gpt';
+import { generateEnhancedText, GPT_OPTIONS } from '../gpt-client';
 import { clipboardCopy } from '../utility';
 import ThreeDotLoader from './ThreeDotLoader';
 
